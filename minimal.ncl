@@ -101,10 +101,14 @@ let needs_schema = import "need_classes.ncl" in
 
     Source | doc "An input to a build spec which represents source code from some location." = {
         ty | Tys = 'Source,
+        file
+          | String | optional,
+
         url
-          | String,
+          | String | optional,
         sha256
-          | String,
+          | String | optional,
+
         extract
           | Bool | optional,
         strip_prefix
@@ -252,6 +256,7 @@ let needs_schema = import "need_classes.ncl" in
 
         build_cmd | String | optional,
         build_cmds | Array (Array String) | optional,
+        build_cmds_cmd | String | optional,
     },
     harness | Dyn -> Harness | doc "Constructs a harness." =
         fun spec => spec | Harness,
