@@ -1,5 +1,7 @@
 # Minimal's Nickel Standard Library
 
+**Obsolete: The standard library is now embedded in the Minimal CLI.**
+
 [Nickel](https://nickel-lang.org/) type definitions for Minimal build declarations.
 
 ## Current Status
